@@ -11,7 +11,7 @@ app.use(cors())
 const commentsByPostId = {}
 
 app.get('/posts/:id/comments', (req, res) =>{
-  res.send(commentsByPostId[req.params.id]) || []
+  res.send(commentsByPostId[req.params.id] || [])
 
 
 })
@@ -24,6 +24,8 @@ app.post('/posts/:id/comments', async (req, res) =>{
 
   comments.push({id: commentId, content})
 
+  commentsByPostId[req.params.id] = comments 
+  
   await axios.post('http://localhost:4005/events', {
     type: "CommentCreated",
     data:{
@@ -33,7 +35,7 @@ app.post('/posts/:id/comments', async (req, res) =>{
     }
   })
 
-  commentsByPostId[req.params.id] = comments 
+  
 
   res.status(201).send(comments)
 })
