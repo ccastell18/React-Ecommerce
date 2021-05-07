@@ -34,9 +34,9 @@ app.post('/posts/:id/comments', async (req, res) =>{
       postId:req.params.id,
       status: 'pending'
     }
+  }).catch(error =>{
+    console.log(error.message)
   })
-
-  
 
   res.status(201).send(comments)
 })

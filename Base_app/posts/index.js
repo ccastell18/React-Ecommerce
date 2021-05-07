@@ -28,6 +28,8 @@ app.post('/posts', async (req,res) =>{
     data: {
       id, title
     }
+  }).catch(error =>{
+    console.log(error.message)
   })
 
   res.status(201).send(posts[id])
