@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: query
-          image: ccastell18/query
+          image: ccastell18/query:latest
 ---
 apiVersion: v1
 kind: Service

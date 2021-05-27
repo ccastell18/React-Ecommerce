@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: moderation
-          image: ccastell18/moderation
+          image: ccastell18/moderation:latest
 ---
 apiVersion: v1
 kind: Service

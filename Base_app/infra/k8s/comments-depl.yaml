@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: comments
-          image: ccastell18/comments
+          image: ccastell18/comments:latest
 ---
 apiVersion: v1
 kind: Service

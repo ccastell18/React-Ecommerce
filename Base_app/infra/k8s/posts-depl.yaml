@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: posts
-          image: ccastell18/posts
+          image: ccastell18/posts:latest
 ---
 apiVersion: v1
 kind: Service
